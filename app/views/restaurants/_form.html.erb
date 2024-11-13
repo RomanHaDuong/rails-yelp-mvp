@@ -1,0 +1,8 @@
+<%= simple_form_for @restaurant do |f| %>
+  <%= f.input :name%>
+  <%= f.input :phone_number%>
+  <%= f.input :address %>
+  <%= f.input :category, collection: [ "chinese", "italian", "japanese", "french", "belgian" ], prompt: "Select Category" %>
+  <%= f.submit(@restaurant.new_record? ? 'Create Restaurant' : 'Update Restaurant') %>
+<% end %>
+<%= link_to "Back to restaurants", restaurants_path %>
